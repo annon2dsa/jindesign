@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
+
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -145,7 +146,7 @@ const SectionOne = () => {
         </MainText>
         <SubText sx={{ textAlign: "center", width: "35.063rem" }}>
           I believe that design isn't just about aesthetics; it's about crafting
-          delightful and meaningful interactions 
+          delightful and meaningful interactions
         </SubText>
       </TextContainer>
     </MainContainer>

@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
-import { Skeleton, Typography, IconButton, Button } from "@mui/material";
-
+import { Typography, IconButton, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -33,6 +33,11 @@ const TextContainer = styled("div")(({ theme }) => ({
   padding: "0.5rem",
   width: "100%",
   height: "100%",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column-reverse",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 }));
 
 const SubText = styled(Typography)(({ theme }) => ({
@@ -66,6 +71,9 @@ const AboutContainer = styled("div")(({ theme }) => ({
   gap: "2.5rem",
   marginTop: "6rem",
   width: "100%",
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "0rem",
+  },
 }));
 
 const ButtonContainer = styled("div")(({ theme }) => ({
@@ -86,7 +94,8 @@ const AboutIcon = styled(IconButton)(({ theme }) => ({
     color: "#fff",
   },
   [theme.breakpoints.down("sm")]: {
-    display: "none",
+    width: "128px",
+    height: "128px",
   },
 }));
 
@@ -163,6 +172,13 @@ const SectionTwo = () => {
     window.open(gmailUrl, "_blank");
   };
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/about");
+    console.log("clicked");
+  };
+
   return (
     <MainContainer>
       <AboutContainer>
@@ -177,7 +193,7 @@ const SectionTwo = () => {
             lookout for exciting new projects and creative challenges.
           </MainText>
           <AboutButtonContainer>
-            <AboutIcon>
+            <AboutIcon onClick={handleClick}>
               <SubText>About Me :)</SubText>
             </AboutIcon>
           </AboutButtonContainer>

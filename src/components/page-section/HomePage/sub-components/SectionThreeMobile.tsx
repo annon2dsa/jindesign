@@ -1,5 +1,6 @@
 import { styled } from "@mui/system";
 import { Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -95,6 +96,12 @@ const InfoContainer = styled("div")(({ theme }) => ({
 }));
 
 const SectionThree = () => {
+      const navigate = useNavigate();
+
+      const handleClick = () => {
+        console.log("clicked");
+        navigate("/cashup");
+      };
   return (
     <MainContainer>
       <HeadingContainer>
@@ -155,6 +162,7 @@ const SectionThree = () => {
             }}
             variant="outlined"
             color="secondary"
+            onClick={handleClick}
           >
             View project
           </Button>
