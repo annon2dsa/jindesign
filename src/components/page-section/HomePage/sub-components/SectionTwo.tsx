@@ -11,17 +11,6 @@ const MainContainer = styled("div")(({ theme }) => ({
   width: "100%",
   padding: "1rem",
   gap: "1rem",
-  // marginTop: "8rem",
-}));
-
-const MarqueeContainer = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  padding: "1rem",
-  gap: "1rem",
 }));
 
 const TextContainer = styled("div")(({ theme }) => ({
@@ -29,7 +18,7 @@ const TextContainer = styled("div")(({ theme }) => ({
   flexDirection: "row",
   justifyContent: "space-between",
   alignItems: "center",
-  gap: "0.5rem",
+  gap: "180px",
   padding: "0.5rem",
   width: "100%",
   height: "100%",
@@ -41,10 +30,13 @@ const TextContainer = styled("div")(({ theme }) => ({
 }));
 
 const SubText = styled(Typography)(({ theme }) => ({
-  fontWeight: 300,
-  fontSize: "1rem",
-  lineHeight: "1.188rem",
-  color: "#FFFFFF",
+  fontWeight: 500,
+  fontSize: "24px",
+  lineHeight: "normal",
+  color: "#000",
+  ":hover": {
+    color: "#fff",
+  },
 }));
 
 const MainText = styled(Typography)(({ theme }) => ({
@@ -90,8 +82,10 @@ const AboutIcon = styled(IconButton)(({ theme }) => ({
   height: "14.438rem",
   width: "14.438rem",
   background: "#8ED6FF",
-  "&hover": {
-    color: "#fff",
+  // box-shadow: 0 0px 10px var(--cfOrange);
+  ":hover": {
+    background: "#8ED6FF",
+    boxShadow: "0px 0px 10px #8ED6FF",
   },
   [theme.breakpoints.down("sm")]: {
     width: "128px",
@@ -112,53 +106,6 @@ const Image = styled("img")(({ theme }) => ({
 }));
 
 const SectionTwo = () => {
-  const marqueeFunction = () => {
-    return (
-      <MainContainer
-        sx={{
-          flexDirection: "row",
-          margin: "0rem",
-          padding: "0rem",
-          overflow: "hidden",
-          gap: "2rem",
-        }}
-      >
-        <Image
-          sx={
-            {
-              // maxWidth: "1115px",
-            }
-          }
-          src="/images/marqee1.svg"
-          alt="marqee1"
-        />
-      </MainContainer>
-    );
-  };
-  const marqueeFunctionTwo = () => {
-    return (
-      <MainContainer
-        sx={{
-          flexDirection: "row",
-          margin: "0rem",
-          padding: "0rem",
-          overflow: "hidden",
-          gap: "2rem",
-        }}
-      >
-        <Image
-          sx={
-            {
-              // maxWidth: "1115px",
-            }
-          }
-          src="/images/marqee2.svg"
-          alt="marqee2"
-        />
-      </MainContainer>
-    );
-  };
-
   const handleButtonClick = () => {
     // Replace 'recipient@example.com' with the actual email address
     const toAddress = "kjim400@gmail.com.com";
@@ -188,9 +135,14 @@ const SectionTwo = () => {
           }}
         >
           <MainText>
-            Design isn't just my job; it's my{" "}
-            <span style={{ color: "#8ED6FF" }}>passion.</span> I'm always on the
-            lookout for exciting new projects and creative challenges.
+            Design isn't just my job;
+            <br /> it's my <span style={{ color: "#8ED6FF" }}>
+              passion.
+            </span>{" "}
+            I'm always on the
+            <br />
+            lookout for exciting new projects <br />
+            and creative challenges.
           </MainText>
           <AboutButtonContainer>
             <AboutIcon onClick={handleClick}>

@@ -15,7 +15,6 @@ const MainContainer = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "7.5rem",
   gap: "1rem",
   backgroundColor: "#131516",
   [theme.breakpoints.down("sm")]: {
@@ -34,7 +33,7 @@ const HomePage = () => {
         <SectionOne />
         <MarqueeComponent />
         <SectionTwo />
-        <SectionThree />
+        {/* <SectionThree /> */}
         <SectionThreeMobile />
         {/* <Button
           sx={{

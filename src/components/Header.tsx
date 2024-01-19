@@ -9,7 +9,7 @@ const HeadComponent = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "space-between",
   padding: "2rem 4rem",
-  backgroundColor: "#131516",
+  background: "blur(1rem)",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
   },

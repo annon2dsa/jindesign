@@ -21,15 +21,17 @@ const MainContainer = styled("div")(({ theme }) => ({
 const ProfileBox = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
-  justifyContent: "center",
+  justifyContent: "space-between",
   alignItems: "center",
-  // width: "13.938rem",
-  // height: "5.188rem",
+  width: "auto",
+  maxWidth: "223px",
+  maxHeight: "83px",
+  height: "auto",
   background: "#1B272C",
-  borderRadius: "3.188rem",
+  borderRadius: "51px",
   border: "3px solid rgba(142, 214, 255, 0.10)",
-  padding: "0.75rem 1rem",
-  gap: "0.5rem",
+  padding: "6px 16px",
+  gap: "8px",
   boxShadow: "0px 22px 30px 0px rgba(0, 0, 0, 0.10)",
   [theme.breakpoints.down("sm")]: {
     width: "10rem",
@@ -37,15 +39,10 @@ const ProfileBox = styled("div")(({ theme }) => ({
   },
 }));
 
-const ImageContainer = styled("div")(({ theme }) => ({
-  height: "3.313rem",
-  width: "3.313rem",
-}));
-
 const Image = styled("img")(({ theme }) => ({
   objectFit: "cover",
-  height: "3.313rem",
-  width: "3.313rem",
+  height: "59px",
+  width: "59px",
   borderRadius: "50%",
 }));
 
@@ -60,10 +57,14 @@ const TextContainer = styled("div")(({ theme }) => ({
 }));
 
 const Text = styled(Typography)(({ theme }) => ({
-  fontWeight: 700,
-  fontSize: "1.25rem",
-  lineHeight: "1.5rem",
-  color: "#FFFFFF",
+  color: "#FFF",
+  fontFamily: "Syne",
+  fontSize: "20px",
+  fontWeight: 500,
+  lineHeight: "normal",
+  fontStyle: "normal",
+  // letterSpacing: "2px",
+  width: "100%",
   [theme.breakpoints.down("sm")]: {
     fontSize: "0.875rem",
     lineHeight: "normal",
@@ -83,9 +84,9 @@ const SubText = styled(Typography)(({ theme }) => ({
 }));
 
 const MainText = styled(Typography)(({ theme }) => ({
-  fontWeight: 500,
-  fontSize: "4.5rem",
-  lineHeight: "5.375rem",
+  fontWeight: 700,
+  fontSize: "72px",
+  lineHeight: "86px",
   color: "#FFFFFF",
   textAlign: "center",
   fontFamily: "Syne",
@@ -121,10 +122,14 @@ const SectionOne = () => {
       <BackgroundGlow></BackgroundGlow>
       <Fade>
         <ProfileBox>
-          <ImageContainer>
-            <Image src="/images/logo/profile.svg" alt="profile" />
-          </ImageContainer>
-          <TextContainer>
+          {/* <ImageContainer> */}
+          <Image src="/images/logo/profile.svg" alt="profile" />
+          {/* </ImageContainer> */}
+          <TextContainer
+            sx={{
+              alignItems: "flex-start",
+            }}
+          >
             <Text>Kristen Jim</Text>
             <SubText>UX/UI Designer</SubText>
           </TextContainer>

@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import Marquee from "react-fast-marquee";
 
 const MarqueeContainer = styled("div")(({ theme }) => ({
+  position: "relative",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -11,6 +12,7 @@ const MarqueeContainer = styled("div")(({ theme }) => ({
   width: "100%",
   padding: "1rem",
   gap: "1rem",
+  margin: "0rem -15rem",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "40px",
   },
