@@ -34,15 +34,12 @@ const BackgroundGlow = styled("div")(({ theme }) => ({
   marginTop: "2rem",
 }));
 
-const UserOnboarding = () => {
+const SetGoals = () => {
   return (
     <MainContainer>
       <BackgroundGlow />
-      <Image
-        src="/images/user_onboarding.svg"
-        alt="user_onboarding"
-      />
+      <Image src="/images/setgoals.png" alt="user_onboarding" />
     </MainContainer>
   );
 };
-export default UserOnboarding;
+export default SetGoals;

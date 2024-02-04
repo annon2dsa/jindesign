@@ -63,6 +63,8 @@ const AboutContainer = styled("div")(({ theme }) => ({
   border: "solid 2px #8ED6FF",
   background: "#1A1D1F",
   backdropFilter: "blur(2px)",
+  height: "365px",
+  maxWidth: "1200px"
 }));
 
 const ContentContainerTwo = styled("div")(({ theme }) => ({
@@ -77,9 +79,9 @@ const ContentContainerTwo = styled("div")(({ theme }) => ({
 }));
 
 const CashUpImage = styled("img")(({ theme }) => ({
+  // height: "304px",
   height: "304px",
-  maxHeight: "304px",
-  maxWidth: "521px",
+  width: "521px",
   flexShrink: 0,
   borderRadius: "1.625rem",
 }));

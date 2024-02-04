@@ -57,24 +57,6 @@ const SectionOne = () => {
 
   return (
     <React.Fragment>
-      <Button
-        sx={{
-          width: "156px",
-          height: "58px",
-          padding: "10px",
-
-          borderRadius: "89px",
-          textTransform: "none",
-          gap: "10px",
-          border: "1px solid #FFFFFF",
-        }}
-        variant="outlined"
-        color="secondary"
-        onClick={handleClick}
-      >
-        <ArrowBackIcon sx={{ color: "#FFFFFF" }} />
-        Back
-      </Button>
       <HeadContainer sx={{ marginBottom: "82px" }}>
         <Typography
           sx={{

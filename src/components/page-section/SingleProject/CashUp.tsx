@@ -10,7 +10,10 @@ import EmpathyMap from "./sub-sections/EmpathyMap";
 import LayoutGrid from "./sub-sections/LayoutGrid";
 import UserInterface from "./sub-sections/UserInterface";
 import UserOnboarding from "./sub-sections/UserOnboarding";
-
+import HomeScreen from "./sub-sections/HomeScreen";
+import Budgeting from "./sub-sections/Budgeting";
+import Splitmoney from "./sub-sections/SplitMoney";
+import SetGoals from "./sub-sections/SetGoals";
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -41,6 +44,10 @@ const CashUp = () => {
         <LayoutGrid />
         <UserInterface />
         <UserOnboarding />
+        <HomeScreen />
+        <Budgeting />
+        <Splitmoney />
+        <SetGoals />
       </MainContainer>
     </Layout>
   );
