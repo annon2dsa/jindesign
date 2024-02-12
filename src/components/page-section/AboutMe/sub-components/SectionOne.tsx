@@ -1,8 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
-import Marquee from "react-fast-marquee";
-import { useTheme } from "@emotion/react";
+import { motion } from "framer-motion";
 
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
@@ -18,7 +17,7 @@ const MainContainer = styled("div")(({ theme }) => ({
     alignItems: "center",
     flexDirection: "column",
     marginTop: "10rem",
-    marginBottom:"40px",
+    marginBottom: "40px",
     padding: "0rem",
   },
 }));
@@ -104,7 +103,7 @@ const MaltaImg = styled("img")(({ theme }) => ({
   width: "auto",
   maxHeight: "377px",
   [theme.breakpoints.down("sm")]: {
-width: "100%",
+    width: "100%",
   },
 }));
 
@@ -118,7 +117,17 @@ const SectionOne = () => {
   return (
     <MainContainer>
       <ImageContainer>
-        <Image src="/images/kristen.svg" />
+        <motion.div
+          drag
+          dragConstraints={{
+            top: -50,
+            left: -50,
+            right: 50,
+            bottom: 50,
+          }}
+        >
+          <Image src="/images/kristen.svg" />
+        </motion.div>
       </ImageContainer>
       <HeadingContainer>
         <HeadeText>

@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/system";
 import { Typography, IconButton, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { motion } from "framer-motion";
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -78,10 +78,11 @@ const ButtonContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("sm")]: { paddingLeft: "0rem" },
 }));
 
-const AboutIcon = styled(IconButton)(({ theme }) => ({
+const AboutIcon = styled(motion.button)(({ theme }) => ({
   height: "14.438rem",
   width: "14.438rem",
   background: "#8ED6FF",
+  borderRadius: "50%",
   // box-shadow: 0 0px 10px var(--cfOrange);
   ":hover": {
     background: "#8ED6FF",
@@ -145,9 +146,18 @@ const SectionTwo = () => {
             and creative challenges.
           </MainText>
           <AboutButtonContainer>
-            <AboutIcon onClick={handleClick}>
+            {/* <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            > */}
+            <AboutIcon
+              onClick={handleClick}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <SubText>About Me :)</SubText>
             </AboutIcon>
+            {/* </motion.button> */}
           </AboutButtonContainer>
         </TextContainer>
         <ButtonContainer>

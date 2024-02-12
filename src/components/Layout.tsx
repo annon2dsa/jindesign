@@ -10,7 +10,7 @@ type LayoutProps = {
 };
 
 const Main = styled("main")(({ theme }) => ({
-  padding: "20px",
+  padding: "10px",
   [theme.breakpoints.down("sm")]: {
     padding: "0px",
   },

@@ -22,6 +22,9 @@ const MainContainer = styled("div")(({ theme }) => ({
   padding: "7.5rem",
   gap: "1rem",
   backgroundColor: "#131516",
+  [theme.breakpoints.down("lgPlus")]: {
+    padding: "5rem",
+  },
   [theme.breakpoints.down("sm")]: {
     padding: "0rem",
   },

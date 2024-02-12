@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
-
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 const MainContainer = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -116,6 +117,23 @@ const BackgroundGlow = styled("div")(({ theme }) => ({
   marginTop: "-6rem",
 }));
 
+const AnimatedTextContainer = ({ children }: { children: ReactNode }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const fadeInAndScale = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "scale(1)" : "scale(0.8)",
+  });
+
+  return (
+    <animated.div ref={ref} style={fadeInAndScale}>
+      {children}
+    </animated.div>
+  );
+};
+
 const SectionOne = () => {
   return (
     <MainContainer sx={{ marginTop: "5.563rem" }}>
@@ -135,6 +153,7 @@ const SectionOne = () => {
           </TextContainer>
         </ProfileBox>
       </Fade>
+
       <TextContainer
         sx={{
           marginTop: "2rem",
@@ -144,11 +163,13 @@ const SectionOne = () => {
           gap: "1.5rem",
         }}
       >
-        <MainText>
-          I design mindful user{" "}
-          <span style={{ color: "#8ED6FF" }}>experiences</span> & seamless
-          interfaces
-        </MainText>
+        <AnimatedTextContainer>
+          <MainText>
+            I design mindful user{" "}
+            <span style={{ color: "#8ED6FF" }}>experiences</span> & seamless
+            interfaces
+          </MainText>
+        </AnimatedTextContainer>
         <SubText sx={{ textAlign: "center", width: "35.063rem" }}>
           I believe that design isn't just about aesthetics; it's about crafting
           delightful and meaningful interactions
