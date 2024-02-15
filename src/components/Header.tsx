@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Button, Typography, AppBar, SwipeableDrawer } from "@mui/material";
+import { Typography, AppBar } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useSpring, animated } from "react-spring";
+import Slide from "@mui/material/Slide";
 
 const HeadComponent = styled("div")(({ theme }) => ({
   display: "flex",
@@ -84,38 +84,41 @@ const Header = () => {
   }, [scrollY]);
 
   return (
-    <AppBar
-      position="fixed"
-      color="transparent"
-      elevation={scrollY === 0 ? 0 : 3}
-    >
-      <HeadComponent sx={{ backdropFilter: scrollY !== 0 ? "blur(1rem)" : "" }}>
-        <Link to="/">
-          <LogoComponent src="/images/logo/jim.svg" alt="logo" />
-          <ImgComponent src="/images/logo/kitta.svg" alt="kittalogo" />
-        </Link>
-        <TabHead>
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "#FFFFFF",
-              // "&:hover": { color: "#8ED6FF" },
-              transition: "color 0.3s",
-            }}
-            to="/about"
-          >
-            <Text variant="subtitle1">About me</Text>
+    <Slide appear={false} direction="down" in={negativeScroll}>
+      <AppBar
+        position="fixed"
+        color="transparent"
+        elevation={scrollY === 0 ? 0 : 3}
+      >
+        <HeadComponent
+          sx={{ backdropFilter: scrollY !== 0 ? "blur(1rem)" : "" }}
+        >
+          <Link to="/">
+            <LogoComponent src="/images/logo/jim.svg" alt="logo" />
+            <ImgComponent src="/images/logo/kitta.svg" alt="kittalogo" />
           </Link>
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "#FFFFFF",
-            }}
-            to="/projects"
-          >
-            <Text variant="subtitle1">Project</Text>
-          </Link>
-          {/* <Link
+          <TabHead>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "#FFFFFF",
+                // "&:hover": { color: "#8ED6FF" },
+                transition: "color 0.3s",
+              }}
+              to="/about"
+            >
+              <Text variant="subtitle1">About me</Text>
+            </Link>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "#FFFFFF",
+              }}
+              to="/projects"
+            >
+              <Text variant="subtitle1">Project</Text>
+            </Link>
+            {/* <Link
             style={{
               textDecoration: "none",
               color: "#FFFFFF",
@@ -132,9 +135,10 @@ const Header = () => {
               Contact
             </Text>
           </Link> */}
-        </TabHead>
-      </HeadComponent>
-    </AppBar>
+          </TabHead>
+        </HeadComponent>
+      </AppBar>
+    </Slide>
   );
 };
 
